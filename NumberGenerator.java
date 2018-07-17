@@ -183,6 +183,59 @@ class NumberGenerator {
         }
 
     }
+    
+    static void mmNumberFrequency(int currentElement) {
+
+        int x;
+        int extra = currentElement;
+        int many =0;
+        for (int i = 0; i < 5; i++) {
+            int times =i;
+            try {
+                myStmt = myConn.createStatement();
+                myRs = myStmt.executeQuery("SELECT * FROM mm_table;");
+                while (myRs.next()) {
+                    // System.out.println(myRs.getInt("where"));
+                    // x = myRs.getInt("num_1");
+                    if (times == 0) {
+                        x = myRs.getInt("num_1");
+                        if (x == extra) {
+                            many++;
+                        }
+                    } else if (times == 1) {
+                        x = myRs.getInt("num_2");
+                        if (x == extra) {
+                            many++;
+                        }
+                    } else if (times == 2) {
+                        x = myRs.getInt("num_3");
+                        if (x == extra) {
+                            many++;
+                        }
+                    } else if (times == 3) {
+                        x = myRs.getInt("num_4");
+                        if (x == extra) {
+                            many++;
+                        }
+                    } else if (times == 4) {
+                        x = myRs.getInt("num_5");
+                        if (x == extra) {
+                            many++;
+                        }
+                    }
+                }
+            } catch (SQLException exc) {
+                exc.printStackTrace();
+            }
+
+            // SELECT num_5, COUNT(*) `return_value` FROM mm_table GROUP BY num_5 HAVING `return_value` > 1;
+        }
+
+        System.out.println(extra+ " appears: " + many + " times in the database");
+        double percent = (many/881.0)*100.0;
+        System.out.println("the percent of "+extra+ " showing up Lottery history is: "+df.format(percent)+ "%");
+        System.out.println();
+    }
 
 //    int getLastId(){
 //        //String URL="localhost:3306";
