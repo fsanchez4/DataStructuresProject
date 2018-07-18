@@ -1,1 +1,1 @@
-"# DataStructuresProject - PLEASE SEE "FINAL*" .JAVA FILES FOR COMPLETED FILES AND EXECUTABLE APP"
+"# DataStructuresProject - Please see "lotteryProject" folder for final .java files and execute LottoNumberGenerator.java to run app" 
