@@ -236,6 +236,12 @@ class NumberGenerator {
         System.out.println("the percent of "+extra+ " showing up Lottery history is: "+df.format(percent)+ "%");
         System.out.println();
     }
+    
+    private static void frequencyCheck(int[] ray){
+                for(int i =0; i<ray.length; i++){
+                    mmNumberFrequency(ray[i]);
+                }
+            }
 
 //    int getLastId(){
 //        //String URL="localhost:3306";
